@@ -1,0 +1,91 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Allow sections to wrap into new lines */
+  justify-content: space-between; /* Equal spacing between sections */
+  padding: 10px;
+}
+
+.section {
+  border: 1px solid black;
+  margin: 10px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  position: relative;
+  flex: 1 1 30%; /* Default: Each section takes 30% width (Desktop view) */
+}
+
+p {
+	margin-top:10px;
+}
+
+.title-one {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: pink;
+  padding: 2px;
+  font-weight: bold;
+  border: 1px solid black;
+}
+
+.title-two {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  padding: 2px;
+  font-weight: bold;
+  border: 1px solid black;
+}
+
+.title-three {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: yellow;
+  padding: 2px;
+  font-weight: bold;
+  border: 1px solid black;
+}
+
+/* Desktop View (Above 992px) */
+@media (min-width: 992px) {
+  .section {
+    flex: 1 1 1 33.33%; /* Each section takes 33.33% width */
+  }
+}
+
+/* Tablet View (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .section {
+    flex: 1 1 1 48%; /* First two sections take 48% width */
+  }
+
+  .section:nth-child(3) {
+    flex: 1 1 100%; /* Last section takes full width and moves to the next row */
+  }
+}
+
+/* Mobile View (Below 768px) */
+@media (max-width: 767px) {
+  .section {
+    flex: 1 1 100%; /* Each section takes full width */
+  }
+}
